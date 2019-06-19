@@ -23,19 +23,19 @@
 #     enable-self-preservation: false  #禁用自我保护
 server:
   port: 6001 #端口号
-spring:
+spring: 
   profiles: dev # 开发环境
   application:
     name: microservice-config-eureka
-eureka:
-  instance:
+eureka: 
+  instance: 
     hostname: eureka6001.com
-  client:
+  client: 
     registerWithEureka: false
     fetchRegistry: false
-    serviceUrl:
+    serviceUrl: 
       defaultZone: http://eureka6001.com:6001/eureka/
-  server:
+  server: 
     enable-self-preservation: false # 禁用自我保护机制*****************
 
 ---
