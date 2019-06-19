@@ -1,24 +1,25 @@
-﻿spring:
+spring:
   profiles:
-    active: dev
+    active: dev # 激活开发环境配置
 ---
 server:
   port: 8001
 mybatis:
-  config-location: classspath:mybatis/mybatis.cfg.xml
-  type-aliases-package: com.yanzhen.springcloud.entities
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.mengxuegu.springcloud.entities
   mapper-locations: classpath:mybatis/mapper/**/*.xml
 spring:
-  profiles: dev
+  profiles: dev # 开发环境
   application:
-    name: microservice-product-config
+    name: microservice-product-config # ******服务名*******
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url:  jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8
+    url: jdbc:mysql://127.0.0.1:3306/springcloud_db01?serverTimezone=GMT%2B8 #数
+  据库连接地址，*****注意库名 db01***************
     username: root
     password: 123
-    dbcp2: 
+    dbcp2:
       min-idle: 5
       initial-size: 5
       max-total: 5
@@ -27,8 +28,8 @@ eureka:
   client:
     registerWithEureka: true
     fetchRegistry: true
-    serviceUrl: 
-      defaultZone:  http://eureka6001.com:6001/eureka
+    serviceUrl:
+      defaultZone: http://eureka6001.com:6001/eureka
   instance:
     instanceId: ${spring.application.name}:${server.port}
     prefer-ip-address: true
@@ -47,9 +48,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/springcloud_db02?serverTimezone=GMT%2B8 #数
-据库连接地址，*****注意库名 db02***************
+  据库连接地址，*****注意库名 db02***************
     username: root
-    password: 123
+    password: root
     dbcp2:
       min-idle: 5
       initial-size: 5
