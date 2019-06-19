@@ -1,0 +1,43 @@
+﻿spring:
+  profiles:
+    active: dev #激活开发环境
+
+---
+server:
+  port: 6001
+
+spring:
+  profiles: dev #开发环境
+  application:
+    name: microservice-config-eureka
+
+eureka:
+  instance:
+    hostname: eureka6001.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka6001.com:6001/eureka/
+  server:
+    enable-self-preservation: false  #禁用自我保护
+
+---
+server:
+  port: 6001
+spring:
+  profiles:prod
+  application:
+    name: microservice-config-eureka
+
+eureka:
+  instance:
+    hostname: eureka6001.com
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka6001.com:6001/eureka/
+  server:
+    enable-self-preservation: true
+
