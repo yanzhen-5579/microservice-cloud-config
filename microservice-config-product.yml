@@ -9,7 +9,7 @@ mybatis:
   type-aliases-package: com.yanzhen.springcloud.entities
   mapper-locations: classpath:mybatis/mapper/**/*.xml
 spring:
-  profiles:dev
+  profiles: dev
   application:
     name: microservice-product-config
   datasource:
